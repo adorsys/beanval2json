@@ -1,0 +1,12 @@
+body {
+	font-family: Helvetica, Verdana, Arial, sans-serif;
+}
+
+fieldset div {
+	margin: 10px 0;
+}
+
+label {
+	width: 120px;
+	display: inline-block;
+}

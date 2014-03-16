@@ -1,0 +1,2 @@
+de.adorsys.beanval2json.test.ignored.model.*
+de.adorsys.beanval2json.test.model.Person.ignoredProperty
