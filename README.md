@@ -83,7 +83,8 @@ Use the `de.adorsys.beanval2json.BeanvalAnnotationProcessor` e.g. via Maven:
                     <dependency>
                         <groupId>de.adorsys.beanval2json</groupId>
                         <artifactId>beanval2json-generator</artifactId>
-                        <version>${project.version}</version>
+                        <!-- no release by now -->
+                        <version>1.0.0-SNAPSHOT</version>
                     </dependency>
                 </dependencies>
             </plugin>
