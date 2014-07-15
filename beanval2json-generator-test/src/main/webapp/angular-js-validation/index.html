@@ -1,0 +1,95 @@
+<!doctype html>
+<html ng-app="beanval2json">
+<head>
+	<meta charset="utf-8" />
+	<title>AngularJS-Validation</title>
+	<link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body ng-controller="MainCtrl">
+
+	<form name="form" novalidate ng-submit="submitForm()">
+		<fieldset>
+		
+			<legend>AngularJS-Validation</legend>
+			
+			<div>
+				<label for="firstname">Firstname</label>
+				<!-- register the constraint-key as beanval-attribute... -->
+				<input id="firstname" ng-model="firstname" beanval="de.adorsys.beanval2json.test.model.Person.firstname" type="text" />
+			</div>
+			
+			<div>
+				<label for="lastname">Lastname</label>
+				<!-- ... if not present we will use ng-model-attribute. Don't forget to mark the tag with empty beanval -->
+				<input id="lastname" ng-model="de.adorsys.beanval2json.test.model.Person.lastname" beanval type="text" />
+			</div>
+			
+			<div>
+				<label for="eMail">eMail</label>
+				<input id="eMail" ng-model="eMail" type="text" beanval />
+			</div>
+			
+			<div>
+				<label for="empty">Empty Field</label>
+				<input id="empty" ng-model="de.adorsys.beanval2json.test.model.Person.shouldBeNull" type="text" beanval />
+			</div>
+			
+			<div>
+				<label for="salary">Salary</label>
+				<input id="salary" name="salary" ng-model="de.adorsys.beanval2json.test.model.Income.salary" beanval type="number" />
+			</div>
+			
+			<div>
+				<label for="bonus">Bonus</label>
+				<input id="bonus" name="bonus" ng-model="de.adorsys.beanval2json.test.model.Income.bonus" beanval type="number" />
+				<!-- we will add a flag to {formname}.{fieldname}.$error.{constraintname} -->
+				<ul span class="error" ng-show="form.bonus.$invalid">
+					<li ng-show="form.bonus.$error.min">Value is too small</li>
+					<li ng-show="form.bonus.$error.max">Value is too big</li>
+				</ul>
+			</div>
+
+			<div>
+				<label for="birthdate">Birthdate</label>
+				<input id="birthdate" name="birthdate" ng-model="de.adorsys.beanval2json.test.model.Person.birthdate" beanval type="date" />
+				<!-- if you've defined messages for the constraints you can find them in  {formname}.{fieldname}.banvalErrors -->
+				<ul class="error" ng-show="form.birthdate.$invalid">
+					<li ng-repeat="msg in form.birthdate.beanvalErrors">{{msg}}</li>
+				</ul>
+			</div>
+			
+			<div>
+				<label for="anniversary">Anniversary</label>
+				<input id="anniversary" name="anniversary" ng-model="de.adorsys.beanval2json.test.model.Person.somedate" beanval type="date" />
+				<!-- if you've defined messages for the constraints you can find them in  {formname}.{fieldname}.banvalErrors -->
+				<ul class="error" ng-show="form.anniversary.$invalid">
+					<li ng-repeat="msg in form.anniversary.beanvalErrors">{{msg}}</li>
+				</ul>
+			</div>
+			
+			<div>
+				<label for="somethingTrue">Something True</label>
+				<input id="somethingTrue" name="somethingTrue" ng-model="de.adorsys.beanval2json.test.model.Person.somethingTrue" type="checkbox" beanval />
+				<ul class="error" ng-show="form.somethingTrue.$invalid">
+					<li>Value should be true</li>
+				</ul>
+			</div>
+			
+			<div>
+				<label for="somethingFalse">Something False</label>
+				<input id="somethingFalse" name="somethingFalse" ng-model="de.adorsys.beanval2json.test.model.Person.somethingFalse" type="checkbox" beanval />
+				<ul class="error" ng-show="form.somethingFalse.$invalid">
+					<li>Value should be false</li>
+				</ul>
+			</div>
+			
+			<input type="submit" />
+			
+		</fieldset>
+	</form>
+
+	<script src="js/angular.min.js"></script>
+	<script src="js/app.js"></script>
+
+</body>
+</html>

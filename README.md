@@ -103,5 +103,5 @@ Use the `de.adorsys.beanval2json.BeanvalAnnotationProcessor` e.g. via Maven:
 ## Validation
 
 Beanval2Json converts beanvalidation values to JSON to be used for client-side validation. This project does no validation.
-Most projects have their validation-plugins anyway which could use the generated JSON. One integration example with HTML5 form validation
-can be found in the [test-project](beanval2json-generator-test/src/main/webapp/js/html5-validation.js)
+Most projects have their validation-plugins anyway which could use the generated JSON. 
+You can find a [html5-validation example](beanval2json-generator-test/src/main/webapp/html5-validation) and an [AngularJS example](beanval2json-generator-test/src/main/webapp/angular-js-validation) in the test-project.

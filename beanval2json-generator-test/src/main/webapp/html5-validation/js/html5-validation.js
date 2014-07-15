@@ -25,7 +25,7 @@
 			loadJSON(url, initConstraints);
 		};
 		
-		var url = 'js/constraints.json';
+		var url = '../js/constraints.json';
 		
 		var rules = {
 			notNull : function(input, constraint) {

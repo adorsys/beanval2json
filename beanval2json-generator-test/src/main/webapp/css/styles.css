@@ -7,6 +7,30 @@ fieldset div {
 }
 
 label {
-	width: 120px;
+	width: 150px;
 	display: inline-block;
+}
+
+a, a:hover {
+	color: #333;
+}
+
+.error {
+	color: red;
+}
+
+input.ng-invalid {
+	border: 1px solid red;
+}
+
+input.ng-valid {
+	border: 1px solid green;
+}
+
+input.ng-pristine {
+	border: 1px solid gray;
+}
+
+input:focus {
+    outline: none;
 }
